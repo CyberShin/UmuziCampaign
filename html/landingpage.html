@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>LandingPage</title>
+  <meta name="description" content="Landing Page for Umuzi Academy Assignment">
+  <meta name="author" content="@kliffhangsout">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+<style type="text/css">
+  header,nav, section, article, footer {display : block;}
+    nav li {display: inline; }
+    
+    body{background-color: black;align-items: center;}
+    canvas{height: 100%; width: 100%;}
+    #searchbar{outline-color: cyan; border-color:cyan; position: center; color :magenta;align-self: center;margin-left: 200px;}
+    #navigation{text-align-last: center;}
+    .button-class{background-color: black; color:cyan; border-color: cyan; outline-color: cyan;}
+    #locationButton{margin-left: 350px;}
+    #paraGraph{color:cyan;}
+
+</style>
+   <script type="text/javascript">
+      function init()
+      {
+      var finder = document.getElementById('locationButton');
+      finder.addEventListener('click', findme, false);
+
+      }
+
+      function geoSuccess(position)
+      {
+
+       var dateDisplay = new Date(position.timestamp);
+
+       var diplayer = document.getElementById('showLocation');
+
+       displayer.innerHTML = 'Lat :' + position.coords.latitude + 'br' +
+                             'Lat :' + position.coords.longitude + 'br' +
+                             'Accuracy :' + position.coords.accuracy + 'br'+
+                             'Altitude:' + position.coords.altitude + 'br' +
+                             'AltAccuracy:' + position.coords.altitudeAccuracy + 'br' +
+                             'Heading :' + position.coords.heading + 'br' +
+                             'Speed :' + position.coords.speed + 'br' +
+                             'DOM TimeStamp :' + position.timestamp + 'br' +
+                             'TimeStamp :' + diplayDate.toLocaleString();
+
+      }
+
+      function findme()
+      {
+        var myLocationDiv = document.getElementById('showLocation')
+        //check for geolocation support
+        if(navigator.geolocation)
+        {
+          //make asynchronous getCurrent Postion call
+          navigator.geolocation.getCurrentPosition(geoSuccess);
+          myLocationDiv.innerHTML = 'Retrieving your location'
+
+        }else {
+          myLocationDiv.innerHTML = "geolocation not supported"
+        }
+      
+      }
+      window.addEventListener('load', init, false);
+    </script>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <header>  
+        <h1 id="MainTitle" style="text-align: center; color: cyan;">Gugugulethu&reg</h1>
+      <nav>
+        <ul id="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+<input type="search" id="searchbar" placeholder="Help us find what you're looking for" size=70px; type="search" />
+  <button class="button-class">Go!</button>
+  <br>
+  <button id="locationButton"   class="button-class">Location</button>
+  <button id="exitButton"   class="button-class">VRMode</button>
+<div id="showLocation">
+  
+</div>
+    
+  
+  <marquee><p id="paraGraph">Search the universe</p></marquee>
+</body>
+</html>

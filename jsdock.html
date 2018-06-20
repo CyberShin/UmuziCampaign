@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<title>JavaScript Challenges</title>
+
+<!--Basic Page Needs-->
+<meta   charset="utf-8">
+<meta   name="description"  content="JavaScript Challenge Dock Station">
+<meta   name="author"         content="@kliffhangsout">
+<!--Mobile Specific Metas-->
+<meta   name="viewport"       content="width    =   device-width,   initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="css/imagescaling.css">
+<link rel="stylesheet" type="text/css" href="css/pagestructure.css">
+</head>
+
+
+<body>
+
+<div>
+<h1 id="maintitle">JavaScript Challenge</h1>
+</div>
+
+
+<div id="viewer">
+
+			
+			
+
+			<div id="projects">
+
+				<a href="html/jschallenge2.html"><img src="images/jsch2.jpg"></a>
+				<a href="html/jschallenge3.html"><img src="images/jsch3.jpg"></a>
+				<a href="html/jschallenge4.html"><img src="images/jsch4.jpg"></a>
+				
+				
+				
+				
+					
+			</div>
+			<br><br><br><br><br><br><br><br>
+
+			<p id="instructive">Click any of the above images to navigate to the specific challenge</p>
+			<script>
+
+			// I wish I could do this with CSS
+
+			var projects = document.getElementById( 'projects' );
+
+			function resize() {
+
+				var baseWidth = 200;
+				var baseHeight = 150;
+
+				var fullWidth = projects.clientWidth;
+				var width = ( fullWidth / ( Math.ceil( fullWidth / baseWidth ) * baseWidth ) ) * baseWidth;
+				var height = ( width / baseWidth ) * baseHeight;
+
+				for ( var i = 0; i < projects.children.length; i ++ ) {
+
+					var child = projects.children[ i ];
+
+					child.style.width = width + 'px';
+					child.style.height = height + 'px';
+
+				}
+
+			}
+
+			window.addEventListener( 'resize', resize, false );
+			resize();
+
+		</script>
+
+</body>
+
+</html>

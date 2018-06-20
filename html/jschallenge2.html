@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<div id="displayArea"></div>
+<script type="text/javascript">
+		var length1 	= 	6;
+		var	length2 	= 	7;
+		var	length3		=	8;
+
+		var	perimeter	=	(length1	+	length2	+	length3)	/	2;
+
+		var	area	=	Math.sqrt(perimeter*(	(perimeter-length1)	*	(perimeter-length2)	*	(perimeter-length3)	))
+		updateHtml(area);
+
+
+		function updateHtml(area)
+		{
+
+			var myArea		=		document.getElementById('displayArea');
+
+			myArea.innerHTML		= 'Area equals:' + area;
+		}
+</script>
+</body>
+
+</html>

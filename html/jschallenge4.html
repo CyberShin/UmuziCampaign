@@ -1,0 +1,44 @@
+<html>
+<head>
+<script>
+
+//Initialise the page with other event listeners
+function init()
+{
+
+	var btnTest = document.getElementById('test');
+	btnTest.addEventListener('click', horus, false);
+}
+
+
+function		horus()
+{
+				var	numero	=	document.getElementById('numero');
+				var	number	=	numero.value;
+				hours     	=	Math.floor(number	/	60);	
+				minutes		=	number	%	60;
+				
+				var	tocat	=	["that's", hours, "hours", minutes, "minutes"];
+
+				var str		=	tocat.join(' ');
+				
+				resultDiv	=	document.getElementById("result");
+				resultDiv.innerHTML	=	'Thats 	= ' 	+ 	hours + 'hours' + 'and'	+	minutes +	'minutes'	+	'<br>';
+				
+				console.log(str);
+
+}
+// Initialise the page on load
+window.addEventListener('load', init, false);
+</script>
+</head>
+<body>
+<p>Enter a number and watch it turned to hours and minutes</p>
+
+<input id="numero" placeholder="Enter number to convert"/>
+<br>
+<button id="test">Go</button>
+<div id="result">
+	</div>
+</body>
+</html>

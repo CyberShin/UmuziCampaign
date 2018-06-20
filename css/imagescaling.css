@@ -1,0 +1,28 @@
+#viewer {
+				position: absolute;
+				top: 150px;
+				right: 0px;
+				left: 160px;
+				padding: 28px 20px;
+			}
+
+				
+
+#viewer #projects a {
+					display: block;
+					width: 200px;
+					height: 150px;
+					float: left;
+					
+					}				
+
+#viewer #projects img {
+					width: 100%;
+					height: 100%;
+					border-color: cyan;
+				      }				
+
+#viewer #projects img:hover {
+					opacity: 0.75;
+
+				}				

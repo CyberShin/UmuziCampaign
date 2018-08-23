@@ -1,0 +1,48 @@
+<html>
+<body>
+<script>
+function doubles(string)
+{
+  var array1 = [];
+  var array1 = string.split("");
+  var array2 = [];
+  var i;
+  
+
+  for(i = 0; i < array1.length; i++)
+  {
+    var test1;
+    var test2;
+    test1  = array1[i];
+    test2 = array1[i + 1];
+    var test0 = array1[i - 1];
+    
+    
+    if(test2 != test1)
+    {
+       
+        array2.push(array1[i]);
+        
+           
+    }
+    else 
+    {
+        alert("not pushed");
+        i += 1;
+    }
+    
+    
+   
+      
+    
+
+
+  }
+          newString = array2.join("");
+         /** doubles(newString); **/
+          return(newString);
+}
+alert(doubles("abbcccdddda"));
+</script>
+</body>
+</html>

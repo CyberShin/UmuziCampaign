@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>JavaScriptChallenge5</title>
+</head>
+<body>
+<script>
+
+function    find_unique_characters( string ){
+                    var unique='';
+                    for(var i=0; i<string.length; i++)        {
+                    if(unique.indexOf(string[i])==-1){
+                    unique += string[i];
+                                                                        }
+                                                                                }
+    return unique;  
+                                                                    }
+
+
+function findSimilar(string1, string2)
+{
+
+            var arrayString1;
+            
+            var arrayString2;
+            
+            var arraySimilar;
+            
+            var index;
+            
+            var index2;
+            
+            var returnString;
+            
+            var resultString;
+
+            arrayString1    =   [];
+            
+            arrayString2    =   [];
+            
+            arraySimilar    =   [];
+
+
+            arrayString1    =   string1.split("");
+            arrayString2    =   string2.split("");
+
+            for(index   =   0;  index   <=  arrayString1.length;    index++)
+            {
+                    
+                
+                    for(index2   = 0; index2  <=  arrayString2.length; index2++)
+                    {
+                                        if(arrayString1[index]  == arrayString2[index2])
+                                            {
+
+                                                                arraySimilar.push(arrayString2[index2]);
+                                            }
+                                        
+                    
+                    }
+
+            }
+
+                resultString    =   arraySimilar.join("");
+                returnString    =   find_unique_characters(resultString);
+                return(returnString);
+
+}
+alert(findSimilar("Computer", "House"));
+</script>
+</body>
+</html>
